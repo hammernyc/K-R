@@ -16,12 +16,14 @@ int main()
     extern char line[MAXLINE];
     int i, c;
 
-    for (i = 0; (c = getchar()) != EOF; ++i)
+    for (i = 0; i < MAXLINE - 1 && (c = getchar()) != EOF; ++i)
         line[i] = c;
     line[i] = '\0';
 
     decomment();
-    printf("%s", line);
+
+    printf("de-commented:\n");
+    printf("%s\n", line);
 
     return 0;
 }
