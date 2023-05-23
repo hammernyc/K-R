@@ -27,14 +27,15 @@ int main(int argc, char *argv[])
 int binsearch(int x, int v[], int n)
  {
     int lo, hi, mid;
-    lo = 0, mid = 0, hi = n - 1;
+    lo = 0;
+    hi = n - 1;
 
-    while (lo <= hi && v[mid] != x) {
+    while (lo < hi) {
         mid = (lo + hi) / 2;
-        if (x < v[mid])
-            hi = mid - 1;
+        if (x <= v[mid])
+            hi = mid;
         else
             lo = mid + 1;
     }
-    return v[mid] == x ? mid : -1;
+    return v[lo] == x ? lo : -1;
  }
