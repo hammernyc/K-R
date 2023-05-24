@@ -141,7 +141,7 @@ double pop(void)
 /* get a (possibly pushed back) char */
 int getch(void)
 {
- return (bufp > 0) ? buf[--bufp] : getchar();
+    return (bufp > 0) ? buf[--bufp] : getchar();
 }
 
 void ungetch(int c)
